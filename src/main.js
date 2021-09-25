@@ -1,14 +1,19 @@
 require('dotenv').config();
 const manager = require('./config/composer');
+const keyboards = require('./constants/keyboard');
 const texts = require('./constants/text');
 const bot = require("./core/bot");
 
 bot
-    .use(manager)
     .start((ctx) => {
+        // if (ctx.chat.type !== "private") {
+        //     return;
+        // }
         let text = texts.welcome({ name: ctx.from.first_name });
-        ctx.reply(text);
+        let keyboard = keyboards.invite(ctx.botInfo.username);
+        ctx.replyWithHTML(text, keyboard);
     })
+    .use(manager)
     .launch()
     .then(() => {
         console.log(`Bot @${bot.botInfo?.username} ishga tushdi!`);
