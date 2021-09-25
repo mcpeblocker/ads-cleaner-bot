@@ -16,13 +16,8 @@ manager.on('message', async (ctx) => {
             return;
         }
         await ctx.deleteMessage();
-        let prevMessage = ctx.session.last_message_id;
-        if (prevMessage) {
-            await ctx.deleteMessage(ctx.session.last_message_id);
-        }
         let text = texts.warning({ name: ctx.from.first_name, id: ctx.from.id });
-        let { message_id } = await ctx.replyWithHTML(text);
-        ctx.session.last_message_id = message_id;
+        ctx.replyWithHTML(text);
     }
 });
 
