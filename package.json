@@ -1,0 +1,25 @@
+{
+  "name": "ad-cleaner-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node .",
+    "start:dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "telegram",
+    "ads",
+    "cleaner",
+    "helpful"
+  ],
+  "author": "mcpeblocker",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.13",
+    "telegraf": "^4.4.2"
+  }
+}
