@@ -8,7 +8,7 @@ const welcome = (options) => {
 
 const texts = {
     warning,
-    // welcome
+    welcome
 }
 
 module.exports = texts;
