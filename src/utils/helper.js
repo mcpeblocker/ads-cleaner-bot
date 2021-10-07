@@ -3,6 +3,9 @@ const hasLink = (entities) => {
 };
 
 const isAllowed = async (ctx) => {
+    if (ctx.from.id === 777000) {
+        return true;
+    }
     let { status } = await ctx.getChatMember(ctx.from.id);
     let allowed = ['creator','administrator'];
     return allowed.includes(status);
