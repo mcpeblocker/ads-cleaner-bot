@@ -3,7 +3,7 @@ const hasLink = (entities) => {
 };
 
 const isAllowed = async (ctx) => {
-    if (ctx.from.id === 777000) {
+    if (ctx.from?.id === 777000 || ctx.from.username === "GroupAnonymousBot") {
         return true;
     }
     let { status } = await ctx.getChatMember(ctx.from.id);
